@@ -1,0 +1,206 @@
+\documentclass[12pt]{article}
+
+\usepackage{sbc-template}
+
+\usepackage{graphicx,url}
+
+\usepackage[brazil]{babel}   
+\usepackage[utf8]{inputenc}  
+
+\usepackage{gantt}
+\usepackage{authblk}
+
+\sloppy
+
+\title{Plano de Estudos \\ Aplicação de Aprendizagem Profunda ao Reconhecimento de Entidades Nomeadas}
+
+\author[1]{Ramon Ferreira Silva}
+\address{
+    rsilva@ramonsilva.net
+}
+
+\begin{document}
+
+
+\maketitle
+
+\begin{flushleft}
+\textbf{Orientador}: Prof. Eduardo Bezerra Bezerra da Silva, D. Sc. \hfill{}\\
+\textbf{Linha de Pesquisa}: Gerência de Dados e Aplicações \hfill{}\\
+\textbf{Projeto de Pesquisa}: Aplicações em Aprendizagem Profunda (Deep Learning) \hfill{}\\
+\end{flushleft}
+
+
+\begin{abstract}
+This plan describes how will be conducted the study and research on the topic Deep Learning applied to content Recommender Systems for news portals.
+\end{abstract}
+     
+\begin{resumo} 
+  Este plano descreve como será realizado o estudo de pesquisa sobre o tema Aprendizagem Profunda aplicada a Sistemas de Recomendação de conteúdos para portais de notícias.
+\end{resumo}
+
+
+\section{Objetivo}
+A Proposta deste estudo é investigar a aplicação de técnicas de  Aprendizagem Profunda (DL, sigla em inglês) que possam ser aplicadas à Sistemas de Recomendação de Conteúdo (RS, sigla em inglês) para portais de notícias, de modo a extrair valor a partir de grandes volumes de dados textuais. Os objetivos dessa proposta são:
+
+\begin{enumerate}
+\item Investigar os principais problemas de classificação e recomendação de conteúdos enfrentados pelos grandes portais de notícias;
+
+\item Investigar técnicas para reconhecimento de entidades nomeadas em base de textos escritos em linguagem natural;
+
+\item Investigar soluções para situações problemáticas na extração de entidades nomeadas, que possuam valor textual idêntico, porém com valor semântico diferente;
+
+\item Propor uma metodologia de experimentos utilizando DL para reconhecimento de entidades nomeadas, de modo,  a manter ou melhorar o ganho de relevância obtido com outras abordagens para RS.
+ 
+\end{enumerate}
+
+\section{Introdução}
+
+A Extração de Informação (IE, sigla em inglês) é uma tarefa importante na área de mineração de textos e têm sido alvo de muitas pesquisas, entre elas, o processamento de linguagem natural, a recuperação de informação e a mineração de documentos na web. O Reconhecimento de Entidades Nomeadas (NER, sigla em inglês) é uma tarefa primordial na área de IE \cite{Amaral2013}.
+
+Com o crescimento da quantidade de dados disponíveis, os sistemas baseados em Aprendizado de Máquina (ML, sigla em inglês) se popularizaram como meio de produzir de forma rápida e automática modelos que permitem analisar dados em maior quantidade  e complexidade, além de fornecer resultados mais rápidos e mais precisos. 
+
+Esses sistemas coletam informações sobre as preferências dos usuários relativas a um conjunto de itens (e.g., filmes, músicas, livros, piadas, aparelhos, aplicativos, websites, destinos de viagens e material de estudo) \cite{Bobadilla2013109}.
+
+Há uma grande quantidade de estratégias e para a IE de grandes quantidades de dados. Uma dessas estratégias é a utilização do REN, que  consiste em analisar sentenças, e extrair seu valor semântico, através do reconhecimento de entidades e de seus relacionamentos. Desse modo, pode-se atribuir graus de similaridade entre diversos textos e sugerir aos usuários conteúdo de maior relevância relacionados ao assunto o qual ele está engajado naquele momento.
+
+
+\section{Justificativa}
+
+O grande desafio dos portais de notícias é oferecer conteúdo relevante para a grande quantidade de usuários que os acessam diariamente. Para isso, usa-se a estratégia de oferecer um direcionamento para determinadas áreas de interesse do portal, através do agrupamento visual do conteúdo. Esses agrupamentos visuais, geralmente chamados de boxes de conteúdo ou widgets, fornecem aos usuários sugestões de conteúdo seguindo um determinado critério (e.g., notícias mais acessadas, mais comentadas, mais atualizadas, ou de uma determinada categoria, assunto, tópico, etc...).
+
+Determinar o conteúdo que será recomendado através dos boxes, é um trabalho árduo e repetitivo, que muitas vezes é realizado de maneira manual, por uma equipe de curadores de conteúdo. Os grandes portais de notícias, possuem dezenas de  milhões de acessos diários, o que torna inviável manter a relevância do conteúdo recomendado em cada parte do portal. 
+
+O Processo de REN é muito importante para analisar semanticamente um conteúdo, diminuindo a distância existente entre humanos e máquinas, e possibilitando que sistemas de recomendação automáticos possam realizar um trabalho que antes só era possível de ser realizado por humanos. 
+
+Existem diversas abordagens para a classificação de conteúdo e extração de informação divididas em diferentes áreas de concentração, como métodos estatísticos, métodos simbólicos, redes neurais e estratégias híbridas.
+
+Os trabalhos de pesquisa em redes neurais têm concentrado o estudo no próprio funcionamento das redes neurais, e esquecendo-se de esclarecer a relação existente entre elas e os fenômenos cognitivos de alto nível \cite{DanielMuller2015}. Esse estudo foi proposto visando ocupar esse espaço que foi deixando.
+
+\section{Revisão da Literatura}
+Dentro do referencial teórico analisado sobre o tema, podem-se citar alguns conceitos relevantes e indispensáveis para a elaboração deste trabalho de pesquisa.
+
+\subsection{Aprendizagem Profunda}
+Para \cite{Fernades2013}, o cérebro é capaz de armazenar e interpretar uma grande gama de informações, e utilizá-las posteriormente nos mais variados contextos, esta característica é inerente da evolução humana e graças a ela o ser humano foi capaz de sobreviver em cenários complexos, encontrando comida e se protegendo de ameaças.
+
+Ainda para \cite{Fernades2013}, durante o processo de aprendizado, tanto de humanos quanto de animais, a interpretação dos conceitos mais simples ocorre primeiro e durante todo o restp da vida esses conceitos tornam-se mais abstratos e passam a ser generalizados para os mais diversos contextos.
+
+Os modelos de DL são uma maneira de automatizar esses modelos analíticos. Usando algoritmos que possam aprender de forma interativa a partir dos dados, pode-se levar os computadores a obter descobertas ocultas, sem que haja nenhuma intervenção humana direcionada no sentido desta descoberta.
+
+\subsection{Sistemas de Recomendação}
+
+Para \cite{Bobadilla2013109}, os RS  tiveram seu desenvolvimento em paralelo com a própria Web. Enquanto \cite{Adomavicius:2005:TNG:1070611.1070751}, enfatizam que o interesse nesta área continua a ser crescente, porque trata-se de uma área de investigação rica em problemas, e por causa da abundância de aplicações práticas que ajudam usuários a lidar com a sobrecarga de informações.
+
+RS podem ser vistos em praticamente qualquer aplicação da web, seja em sites de busca, comercio eletrônico ou mesmo nos nossos emails. Eles são a base por trás da publicidade na internet. Com a popularização dos dispositivos móveis, eles se tornaram mais importantes, pois agora temos uma riqueza de informações inimaginável, pois cada dispositivo possui inúmeros sensores que indicam localização, clima, sinais vitais e etc..
+
+
+\subsection{Reconhecimento de Entidades Nomeadas}
+
+\cite{nadeau2007survey} lembram que o termo Entidade Nomeada, agora amplamente utilizado no campo de processamento de linguagem natural , foi cunhado para a Conferência de Entendimento Sexta Message ( MUC- 6). Naquela época, o MUC estava se concentrando em EI e em tarefas onde informações estruturadas das atividades da empresa e atividades relacionadas com a defesa eram extraídas de textos não estruturados , tais como artigos de jornal. 
+			
+E \cite{Zaccara2012} conclui, REN é uma subárea de estudo no campo de IE, que tem como objetivo o reconhecimento e a classificação de entidades em categorias pré definidas, tais como: pessoa, organização, lugar, acontecimento, entre outras.
+
+\section{Metodologia Utilizada}
+
+O objeto do estudo será análise o uso de Redes Neurais Convulacionais(CNN) aplicada ao REN e comparar seus resultados com outros métodos de REN em textos de artigos jornalísticos.
+
+\subsection{Definição do Problema}
+
+Um dos desafios dos portais de notícias acontece no processo de direcionamento automático de notícias para uma determinada área de interesse. Um dos problemas envolvidos neste tipo de classificação automática é de entidades com mesmo valor, porém semanticamente diferentes. 
+
+Um exemplo seria: “exibir notícias relacionadas à Rio”. Essa tarefa não é trivial, pois o termo “Rio” possui grande ambiguidade  de significados, podendo ser a cidade, o estado, ou mesmo o nome dado ao curso natural de água. 
+
+\subsection{Estudo sobre aplicação de aprendizado ao problema}
+O reconhecimento automático de entidades deve se basear no contexto onde o termo está inserido, analisando outros termos ao seu redor para tentar determinar um padrão de termos no qual a entidade candidata possa se enquadrar.
+
+Diante disso, o estudo visa comparar o uso de CNN com métodos estatísticos na tarefa de REN em textos.
+
+\subsection{Implementação}
+Inicialmente, haverá um treinamento dos modelos baseados em redes neurais e de modelos bases é métodos estatísticos.
+
+Para redes neurais, pretende-se utilizar o modelo de CNN. Para métodos estatísticos iremos usar o CRF++ que é uma implementação simples e de código aberto, do método Custom Random Fields (CRF).
+
+Pelo fato das CNN tratarem de problemas relacionados à imagens, utilizá-las para resolver problemas de texto, demanda um tarefa de codificação da entrada de dados para vetores. Isso será feito através técnicas de codificação como o   \emph{Modelo Saco-de-Palavras} ou método de Codificação  um-para-m, proposto por \cite{DBLP:journals/corr/ZhangL15}.
+
+Depois de codificar as palavras em vetores, será aplicada a técnica de \emph{N-Gramas} para separar o texto em sentenças que serão analisadas.
+
+\subsection{Avaliação Experimental}
+Para a experimentação serão submetidas textos de artigos jornalísticos obtidos em sistemas de Feeds RSS, aos modelos previamente treinados. E os resultados obtidos ficarão armazenados em arquivos de texto anotados.
+
+\subsection{Análise dos Resultados}
+Para os métodos experimentados serão avaliados os critérios de Assertividade de Sentenças, Assertividade de Palavras isoladas e tempo de treinamento. Resultados serão comparados quanto a eficácia, praticidade, aplicabilidade e desempenho.
+
+O uso de CNN será considerado com êxito, caso  venha igualar ou melhorar o desempenho obtido com métodos estatísticos.
+
+\subsection{Cronograma}
+
+Cronograma das atividades que serão realizadas.
+
+\begin{enumerate}
+\item Realização das Disciplinas
+\item Revisão  Bibliográfica
+\item Estudo sobre Aplicação de Aprendizado ao problema
+\item Implementação
+\item Avaliação Experimental
+\item Análise dos Resultados
+\item Submissão de artigos
+\item Escrita da dissertação
+\item Defesa da dissertação
+\end{enumerate}
+
+\begin{gantt}{6}{12}
+    \begin{ganttitle}
+        \titleelement{2016}{4}
+        \titleelement{2017}{8}
+    \end{ganttitle}
+    \begin{ganttitle}
+      \titleelement{Set}{1}
+      \titleelement{Out}{1}
+      \titleelement{Nov}{1}
+      \titleelement{Dez}{1}
+      \titleelement{Jan}{1}
+      \titleelement{Fev}{1}
+      \titleelement{Mar}{1}
+      \titleelement{Abr}{1}
+      \titleelement{Mai}{1}
+      \titleelement{Jun}{1}
+      \titleelement{Jul}{1}
+      \titleelement{Ago}{1}
+    \end{ganttitle}
+    \ganttbar{1}{0}{12}
+    \ganttbar{2}{6}{3}
+    \ganttbar{3}{9}{3}
+    \ganttbar{8}{11}{1}
+\end{gantt}
+
+\begin{gantt}{8}{12}
+    \begin{ganttitle}
+        \titleelement{2017}{4}
+        \titleelement{2018}{8}
+    \end{ganttitle}
+    \begin{ganttitle}
+      \titleelement{Set}{1}
+      \titleelement{Out}{1}
+      \titleelement{Nov}{1}
+      \titleelement{Dez}{1}
+      \titleelement{Jan}{1}
+      \titleelement{Fev}{1}
+      \titleelement{Mar}{1}
+      \titleelement{Abr}{1}
+      \titleelement{Mai}{1}
+      \titleelement{Jun}{1}
+      \titleelement{Jul}{1}
+      \titleelement{Ago}{1}
+    \end{ganttitle}
+    \ganttbar{4}{0}{6}
+    \ganttbar{5}{5}{2}
+    \ganttbar{6}{7}{1}
+    \ganttbar{7}{1}{10}
+    \ganttbar{8}{0}{11}
+    \ganttbar{9}{11}{1}
+\end{gantt}
+
+\bibliographystyle{sbc}
+\bibliography{sbc-template}
+
+\end{document}
